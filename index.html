@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priyal Jain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="intro">
+        <p class="subtitle">Student · Delhi Public School, R. K. Puram</p>
+        <h1>Priyal Jain</h1>
+        <p class="tagline">Exploring Artificial Intelligence, FinTech, technology-driven innovation and music.</p>
+
+        <nav class="buttons">
+          <button data-open="about">About Me</button>
+          <button data-open="skills">Skills</button>
+          <a href="achievements.html">Achievements</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+      </div>
+
+      <!-- Photo: hidden for now. To show it, remove "hidden" below and
+           replace the placeholder with <img src="images/photo.jpg" alt="Priyal Jain"> -->
+      <div class="photo" hidden>
+        <span class="photo-placeholder">Your photo here</span>
+      </div>
+    </section>
+
+    <!-- Highlight cards -->
+    <section class="cards">
+      <article class="card">
+        <p class="card-label">Focus</p>
+        <p class="card-text">Artificial Intelligence, FinTech, Piano &amp; Chess</p>
+      </article>
+      <article class="card">
+        <p class="card-label">Currently</p>
+        <ul class="card-list">
+          <li>Exploring AI/ML, computer vision and prompt engineering through hands-on projects</li>
+          <li>Learning piano with London College of Music Examinations, University of West London</li>
+        </ul>
+      </article>
+      <a class="card card-link" href="stories.html">
+        <p class="card-label">My Stories</p>
+        <p class="card-text" id="latest-story">Writing and poetry, coming soon →</p>
+      </a>
+    </section>
+
+    <!-- Favourite quote -->
+    <figure class="quote">
+      <blockquote>“The best way to predict the future is to invent it.”</blockquote>
+      <figcaption>— Alan Kay</figcaption>
+    </figure>
+  </main>
+
+  <!-- Pop-ups -->
+  <dialog id="about" class="popup">
+    <button class="close" aria-label="Close">&times;</button>
+    <h2>About Me</h2>
+    <p>I’m Priyal, a Class 9 student exploring Artificial Intelligence, FinTech, and technology-driven innovation.</p>
+    <p>I’m interested in building practical projects, developing new ideas, and continuously expanding my skills across technology and creative disciplines.</p>
+    <p>Outside of technology, music is a big part of my life. I’m learning piano with London College of Music Examinations, University of West London, and I love performing at concerts. I’m also passionate about sports: I play chess, squash and tennis, and I enjoy the focus, strategy and teamwork they bring.</p>
+  </dialog>
+
+  <dialog id="skills" class="popup">
+    <button class="close" aria-label="Close">&times;</button>
+    <h2>Skills</h2>
+    <h3>AI &amp; Technology</h3>
+    <ul class="chips">
+      <li>Artificial Intelligence</li>
+      <li>Machine Learning</li>
+      <li>Computer Vision</li>
+      <li>Prompt Engineering</li>
+    </ul>
+    <h3>Creative</h3>
+    <ul class="chips">
+      <li>Piano</li>
+      <li>Art</li>
+      <li>Writing</li>
+      <li>Poetry</li>
+    </ul>
+    <h3>Sports</h3>
+    <ul class="chips">
+      <li>Chess</li>
+      <li>Squash</li>
+      <li>Tennis</li>
+    </ul>
+  </dialog>
+
+  <script src="stories.js"></script>
+  <script>
+    // Show the newest story's title on the "My Stories" card
+    if (stories.length) {
+      const latest = [...stories].sort((a, b) => b.date.localeCompare(a.date))[0];
+      document.getElementById('latest-story').textContent = latest.title + ' →';
+    }
+
+    // Open the matching pop-up when a button is clicked
+    document.querySelectorAll('[data-open]').forEach(btn => {
+      btn.addEventListener('click', () => document.getElementById(btn.dataset.open).showModal());
+    });
+
+    document.querySelectorAll('.popup').forEach(popup => {
+      // Close with the X button
+      popup.querySelector('.close').addEventListener('click', () => popup.close());
+      // Close when clicking outside the window
+      popup.addEventListener('click', e => { if (e.target === popup) popup.close(); });
+    });
+  </script>
+</body>
+</html>

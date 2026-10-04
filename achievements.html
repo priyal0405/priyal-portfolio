@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achievements · Priyal Jain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header class="page-header intro">
+      <a href="index.html" class="back">← Back to home</a>
+      <p class="subtitle">Priyal Jain</p>
+      <h1>Achievements</h1>
+    </header>
+
+    <!--
+      To add an achievement:
+        1. Copy one <article> block below and paste it anywhere in the list.
+        2. Change data-date (YYYY-MM-DD, or just YYYY if you don't know the day),
+           the year label, title and one-line summary.
+        3. Make a copy of achievement-ai-centre.html for its detail page,
+           and point the "Learn more" link to the new file.
+      The page sorts achievements by data-date automatically, newest first.
+    -->
+    <section class="achievement-list" id="achievement-list">
+
+      <article class="card achievement" data-date="2026-08-19">
+        <p class="card-label">2026 · AI &amp; Technology</p>
+        <h2>2nd Rank out of 200+ students</h2>
+        <p class="card-text">AI Innovation &amp; Incubation Centre, DPS R. K. Puram · Batch 1</p>
+        <a href="achievement-ai-centre.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2026-08-15">
+        <p class="card-label">2026 · AI &amp; Technology</p>
+        <h2>4th Place, Top 5 Project Teams</h2>
+        <p class="card-text">MudraPragyan AI · AI Innovation &amp; Incubation Centre, DPS R. K. Puram · Batch 1</p>
+        <a href="achievement-mudrapragyan.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2026">
+        <p class="card-label">2026 · Music</p>
+        <h2>Annual Concert Performance</h2>
+        <p class="card-text">Theme, GK 2 · Group piano performance of “Giorno’s Theme” from JoJo’s Bizarre Adventure: Golden Wind</p>
+        <a href="achievement-annual-concert.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2025-08-26">
+        <p class="card-label">2025 · Academics</p>
+        <h2>Class VIII Scholar Badge</h2>
+        <p class="card-text">DPS R. K. Puram · Awarded for academic and co-curricular achievements, 2024–25</p>
+        <a href="achievement-scholar-badge.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2024">
+        <p class="card-label">2024 · Academics</p>
+        <h2>Class VII Scholar Badge</h2>
+        <p class="card-text">DPS R. K. Puram · Awarded for academic and co-curricular achievements</p>
+        <a href="achievement-scholar-badge-7.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2025">
+        <p class="card-label">2025 · Music</p>
+        <h2>Annual Concert, 25th Anniversary Special</h2>
+        <p class="card-text">Theme, GK 2 · Group piano performance of Chopin’s Waltz in A minor</p>
+        <a href="achievement-annual-concert-2025.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2024">
+        <p class="card-label">2024 · Sports</p>
+        <h2>1st Place, Chess Tournament (Under-14 Girls)</h2>
+        <p class="card-text">Siri Fort Sports Complex, New Delhi</p>
+        <a href="achievement-chess-siri-fort.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2023">
+        <p class="card-label">2023 · Academics</p>
+        <h2>Class VI Scholar Badge</h2>
+        <p class="card-text">DPS R. K. Puram · Awarded for academic and co-curricular achievements</p>
+        <a href="achievement-scholar-badge-6.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2022">
+        <p class="card-label">2022 · Leadership</p>
+        <h2>Environment Club Member</h2>
+        <p class="card-text">DPS East of Kailash · Invested at the Class V Investiture Ceremony</p>
+        <a href="achievement-environment-club.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2018-12">
+        <p class="card-label">2018 · Music</p>
+        <h2>1st Place, Community Christmas Talent Show</h2>
+        <p class="card-text">Gulmohar Community · Won out of 50+ participants, playing a fusion of Christmas carols on the keyboard</p>
+        <a href="achievement-christmas-talent-show.html" class="learn-more">Learn more →</a>
+      </article>
+
+      <article class="card achievement" data-date="2017">
+        <p class="card-label">2017 · Sports</p>
+        <h2>3rd Place, District Tennis Tournament</h2>
+        <p class="card-text">Placed 3rd with my teammate</p>
+        <a href="achievement-district-tennis.html" class="learn-more">Learn more →</a>
+      </article>
+
+    </section>
+  </main>
+
+  <script>
+    // Sort achievements newest first by their data-date
+    const list = document.getElementById('achievement-list');
+    [...list.querySelectorAll('.achievement')]
+      .sort((a, b) => (b.dataset.date || '').localeCompare(a.dataset.date || ''))
+      .forEach(card => list.appendChild(card));
+  </script>
+</body>
+</html>

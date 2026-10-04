@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Stories · Priyal Jain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header class="page-header intro">
+      <a href="index.html" class="back">← Back to home</a>
+      <p class="subtitle">Priyal Jain</p>
+      <h1>My Stories</h1>
+      <p class="detail-org">Writing and poetry</p>
+    </header>
+
+    <!-- Stories are written in stories.js and appear here automatically -->
+    <section id="story-list" class="post-list"></section>
+  </main>
+
+  <script src="stories.js"></script>
+  <script>
+    const list = document.getElementById('story-list');
+    const formatDate = d => new Date(d + 'T00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    const sorted = [...stories].sort((a, b) => b.date.localeCompare(a.date));
+
+    if (!sorted.length) {
+      list.innerHTML = '<p class="soon">No stories yet. Check back soon.</p>';
+    }
+
+    sorted.forEach(story => {
+      const card = document.createElement('article');
+      card.className = 'card post';
+
+      const meta = document.createElement('p');
+      meta.className = 'card-label';
+      meta.textContent = (story.type ? story.type + ' · ' : '') + formatDate(story.date);
+
+      const title = document.createElement('h2');
+      title.textContent = story.title;
+
+      const body = document.createElement('div');
+      body.className = 'post-body story-body';
+      story.text.trim().split(/\n\s*\n/).forEach(para => {
+        const p = document.createElement('p');
+        p.textContent = para.trim();
+        body.appendChild(p);
+      });
+
+      card.append(meta, title, body);
+
+      // Long pieces start collapsed with a "Read more" toggle
+      if (story.text.length > 500) {
+        body.classList.add('collapsed');
+        const toggle = document.createElement('button');
+        toggle.className = 'read-more';
+        toggle.textContent = 'Read more';
+        toggle.addEventListener('click', () => {
+          const collapsed = body.classList.toggle('collapsed');
+          toggle.textContent = collapsed ? 'Read more' : 'Show less';
+        });
+        card.appendChild(toggle);
+      }
+
+      list.appendChild(card);
+    });
+  </script>
+</body>
+</html>
