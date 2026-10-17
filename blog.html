@@ -45,10 +45,30 @@
 
       const body = document.createElement('div');
       body.className = 'post-body';
+      // A paragraph starting with "## " becomes a section heading,
+      // and one like [photo: images/x.jpg | caption] becomes a photo
       post.text.trim().split(/\n\s*\n/).forEach(para => {
-        const p = document.createElement('p');
-        p.textContent = para.trim();
-        body.appendChild(p);
+        para = para.trim();
+        const photo = para.match(/^\[photo:\s*([^|\]]+?)\s*(?:\|\s*([^\]]*?)\s*)?\]$/);
+        if (photo) {
+          const fig = document.createElement('figure');
+          const img = document.createElement('img');
+          img.src = photo[1];
+          img.alt = photo[2] || '';
+          img.loading = 'lazy';
+          fig.appendChild(img);
+          if (photo[2]) {
+            const cap = document.createElement('figcaption');
+            cap.textContent = photo[2];
+            fig.appendChild(cap);
+          }
+          body.appendChild(fig);
+          return;
+        }
+        const isHeading = para.startsWith('## ');
+        const el = document.createElement(isHeading ? 'h3' : 'p');
+        el.textContent = isHeading ? para.slice(3) : para;
+        body.appendChild(el);
       });
 
       card.append(date, title, body);
