@@ -136,6 +136,24 @@ main {
   color: var(--muted);
 }
 
+/* Contact line under the hero buttons: plain text look, still opens an email */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin: 24px 0 0;
+  font-family: "Inter", system-ui, "Segoe UI", sans-serif;
+}
+.contact .card-label { margin: 0; }
+.contact a {
+  color: var(--ink);
+  font-size: 1.05rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.contact a:hover { text-decoration: underline; }
+
 /* Inner pages (e.g. Achievements) */
 .page-header { padding-top: 48px; }
 .back {
