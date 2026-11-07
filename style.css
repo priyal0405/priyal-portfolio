@@ -176,9 +176,9 @@ main {
 .post-list {
   display: grid;
   gap: 24px;
-  max-width: 760px;
-  margin-top: 56px;
+  margin-top: 56px; /* full width of the page, like the other sections */
 }
+.page-header.narrow { margin-inline: auto; }
 .post h2 {
   margin: 0 0 14px;
   font-family: "Oswald", "Arial Narrow", Impact, sans-serif;
@@ -190,8 +190,11 @@ main {
 .post-body figure { margin: 20px 0 22px; }
 .post-body figure img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 640px; /* keeps tall phone photos from filling the screen */
   height: auto;
+  margin-inline: auto;
   border-radius: 10px;
 }
 .post-body figcaption {
@@ -214,6 +217,7 @@ main {
           mask-image: linear-gradient(#000 60%, transparent);
 }
 .story-body p { white-space: pre-line; } /* keep poem line breaks */
+.story-image { display: block; width: 160px; max-width: 50%; height: auto; margin: 6px 0 20px; }
 
 .read-more {
   margin-top: 6px;
@@ -310,6 +314,37 @@ main {
   align-items: start;
   max-width: 760px;
   margin-top: 24px;
+}
+/* Shrinks everything on a page (text, headings, photos) to 55%.
+   Used on photo album pages: <body class="compact"> */
+.compact main { zoom: 0.55; max-width: calc(1200px / 0.55); } /* still uses the full page width */
+
+/* Photo album pages (e.g. blog-diwali-photos.html): a grid of small cards
+   like the achievements page, so lots of photos fit on one screen.
+   Thumbnails are cropped to the same size; click one to see the whole photo. */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  margin-top: 40px;
+}
+.photo-card {
+  margin: 0;
+  padding: 8px;
+}
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center 30%; /* keep faces in view */
+  border-radius: 10px;
+}
+.photo-card figcaption {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
 }
 .gallery figure { margin: 0; }
 .gallery img {

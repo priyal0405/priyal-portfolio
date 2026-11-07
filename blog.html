@@ -11,7 +11,7 @@
 </head>
 <body>
   <main>
-    <header class="page-header intro">
+    <header class="page-header narrow intro">
       <a href="index.html" class="back">← Back to home</a>
       <p class="subtitle">Priyal Jain</p>
       <h1>Blog</h1>
@@ -63,6 +63,18 @@
             fig.appendChild(cap);
           }
           body.appendChild(fig);
+          return;
+        }
+        // A paragraph like [link: page.html | text] becomes a link
+        const link = para.match(/^\[link:\s*([^|\]]+?)\s*\|\s*([^\]]+?)\s*\]$/);
+        if (link) {
+          const p = document.createElement('p');
+          const a = document.createElement('a');
+          a.href = link[1];
+          a.className = 'inline-link';
+          a.textContent = link[2];
+          p.appendChild(a);
+          body.appendChild(p);
           return;
         }
         const isHeading = para.startsWith('## ');

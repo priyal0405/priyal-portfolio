@@ -12,6 +12,7 @@
    In the text, leave an empty line between paragraphs.
    Start a paragraph with "## " to make it a section heading.
    Add a photo as its own paragraph: [photo: images/name.jpg | Caption]
+   Add a link as its own paragraph: [link: page.html | Link text]
    Posts are shown newest first, sorted by date.
 
    Example:
@@ -26,6 +27,95 @@
 */
 
 const posts = [
+  {
+    title: "Two Hours, 300 Photos & Half a Kilo of Cake",
+    date: "2026-11-06",
+    text: `Some school days are dedicated to academics, assignments and the occasional existential crisis over unfinished homework. And then there are days like this one.
+
+Our school's Diwali celebration was, without a doubt, one of the most enjoyable days we've had this year. And considering we only got two hours to celebrate, I think we did a pretty decent job of making the most of them.
+
+## The Getting-Ready Saga
+
+Let's start with the preparations.
+
+For the occasion, I wore a light blue lehenga. I'd also gotten my mehendi done at home, because what's Diwali without a little mehendi?
+
+[photo: images/blog-diwali-mehendi.jpg | Getting my mehendi done at home]
+
+For jewellery, I wore my favourite flower-shaped pendant, with little gemstones set into each petal, paired with teardrop-shaped earrings and my mother's watch, which I'd borrowed for the day.
+
+Makeup? Absolutely none. School has its rules, and I'm not particularly interested in having a conversation with a teacher about my eyeliner.
+
+The real challenge, however, was my hair. My mother spent a good twenty minutes on it that morning. TWENTY. By the end, I was beginning to wonder whether we were getting ready for a school celebration or a royal reception.
+
+Eventually, everything came together. Outfit sorted, jewellery on, hair done. Time to leave!
+
+[photo: images/blog-diwali-ready.jpg | All ready to go]
+
+And apparently, the outfit was doing its job rather well. I received quite a few compliments throughout the day, but my favourite was one I wasn't supposed to hear.
+
+I happened to overhear my class teacher talking to another teacher. "Doesn't Priyal look like a Greek goddess with that outfit and hair?" she said.
+
+I wasn't part of that conversation, and I definitely wasn't meant to hear it. But I did. Greek goddess? That's quite a comparison, and I'm certainly not complaining.
+
+It's funny how the compliments you remember most are often the ones people never meant for you to hear.
+
+## The Actual Celebration
+
+We started off with an assembly, which was… well, let's just say it wasn't exactly the highlight of the day. I'll spare you the details.
+
+Thankfully, once the assembly was over, we were allowed to do pretty much whatever we wanted in class. And that's when things got interesting.
+
+We played UNO, talked, laughed and took photographs. Actually, scratch that. We took A LOT of photographs.
+
+Our teacher appointed herself our personal photographer and ended up taking over 300 pictures. Yes, THREE HUNDRED. Selfies, whole-class pictures, smaller groups of friends and practically every possible combination of people. I'm fairly certain we could fill an entire photo album from those two hours alone.
+
+I've added a few of my favourites here, because what's the point of having 300 photographs if you don't make everyone else look at them?
+
+[photo: images/blog-diwali-class.jpg | The whole class, with our teacher-turned-photographer in the middle]
+
+[photo: images/blog-diwali-teacher-selfie.jpg | When the photographer joins the photo]
+
+[photo: images/blog-diwali-friends.jpg | One of the many group photos]
+
+[photo: images/blog-diwali-bunny-ears.jpg | Bunny ears: a classic]
+
+[photo: images/blog-diwali-trio.jpg | Three of us, all dressed up]
+
+## World War III: The Chocolate Cake Edition
+
+Now, let's talk about the food.
+
+One of my friends brought a half-kilogram chocolate cake. A lovely gesture, really. Unfortunately, the cake did not get to enjoy a particularly long life.
+
+It was demolished in approximately TWO SECONDS.
+
+I'm not exaggerating. It was practically World War III. I don't think I've ever seen people unite so enthusiastically over a single cake.
+
+Add around four packets of chips, and we had a rather successful food arrangement. Honestly, between UNO, the photographs and the food, nobody had much reason to complain.
+
+## And Then It Was Over…
+
+Here's the unfortunate part. The entire celebration lasted just two hours.
+
+Two. Hours.
+
+It felt like we'd barely settled in and started having fun when it was already time to leave. Nobody was particularly eager to go, especially since we wouldn't be seeing each other for another week because of the Diwali break.
+
+[photo: images/blog-diwali-whole-class.jpg | One last class photo before the Diwali break]
+
+I suppose that's one of the funny things about school. You spend most of your time waiting for a break from the usual routine, and when you finally get a day just to enjoy yourself with your friends, you wish it would last a little longer.
+
+Looking back, there wasn't anything particularly extraordinary about the day. We played a card game, ate cake, went through several packets of chips and took an arguably unreasonable number of photographs.
+
+But that's exactly what made it so enjoyable.
+
+Sometimes the best memories aren't made at grand celebrations or carefully planned events. They're made in ordinary classrooms, surrounded by familiar faces, laughing over things that probably won't even make sense a week later.
+
+I'd say that's a pretty successful Diwali celebration.
+
+[link: blog-diwali-photos.html | See more photos from the day →]`
+  },
   {
     title: "I Wasn't Even Supposed to Be Here: My AI Journey",
     date: "2026-10-17",
