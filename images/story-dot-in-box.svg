@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A square drawn in pencil with a single small dot in the middle">
+  <!-- One closed outline with slightly uneven sides, so it looks hand-drawn but the corners meet -->
+  <path d="M20 20 C70 18, 130 22, 180 20 C182 70, 178 130, 180 180 C130 182, 70 178, 20 180 C18 130, 22 70, 20 20 Z"
+        fill="none" stroke="#f8ecdc" stroke-width="3" stroke-linejoin="round" />
+  <circle cx="100" cy="100" r="5" fill="#f8ecdc" />
+</svg>
