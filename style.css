@@ -315,35 +315,40 @@ main {
   max-width: 760px;
   margin-top: 24px;
 }
-/* Shrinks everything on a page (text, headings, photos) to 55%.
-   Used on photo album pages: <body class="compact"> */
-.compact main { zoom: 0.55; max-width: calc(1200px / 0.55); } /* still uses the full page width */
+/* Diwali photos page header: heading 99px and subtitle 15px on a laptop
+   (5px smaller than the other pages) */
+.photos-header h1 { font-size: clamp(3.25rem, 11vw, 99px); }
+.photos-header .subtitle { font-size: clamp(0.875rem, 2.4vw, 15px); }
 
-/* Photo album pages (e.g. blog-diwali-photos.html): a grid of small cards
-   like the achievements page, so lots of photos fit on one screen.
+/* Photo album pages (e.g. blog-diwali-photos.html): same grid and card size
+   as the achievements page (3 per row on a laptop).
    Thumbnails are cropped to the same size; click one to see the whole photo. */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 14px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 56px;
 }
+/* Box is the same size as an achievement card; the whole photo is shrunk
+   to fit inside it (nothing cropped), with the caption underneath */
 .photo-card {
+  display: flex;
+  flex-direction: column;
+  height: 310px;
   margin: 0;
-  padding: 8px;
+  padding: 14px;
 }
 .photo-card img {
   display: block;
+  flex: 1;
+  min-height: 0;
   width: 100%;
-  height: 150px;
-  object-fit: cover;
-  object-position: center 30%; /* keep faces in view */
-  border-radius: 10px;
+  object-fit: contain; /* show the whole photo */
 }
 .photo-card figcaption {
-  margin-top: 8px;
-  font-size: 0.78rem;
+  margin-top: 10px;
   color: var(--muted);
+  font-size: 0.9rem;
   text-align: center;
 }
 .gallery figure { margin: 0; }
